@@ -1,29 +1,30 @@
 //JAVASCRIPT CODE
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-//<script type="text/javascript">
+//<script type="text/javascript" src="./script.js">
 
 //Event Listener for button COVID-19
  //Event Listener
-$(".searchBtn").on("click",function()
+$("#searchBtn").on("click",function()
 {
-
+    alert("test")
     var queryURL = "https://covidapi.info/api/v1/country/AUS/latest"            
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) 
     {
+    
         var output = Object.values(response.result)[0];
         var confirmCases = output.confirmed;
         var confirmDeaths = output.deaths;
         var confirmRecovered = output.recovered;
-        $("#confirmed").append(confirmCases);
-        $("#death").append(confirmDeaths);
-        $("#recover").append(confirmRecovered);
+        $("#infected").text(confirmCases);
+        $("#deceased").text(confirmDeaths);
+        $("#recovered").text(confirmRecovered);
     })
 })
 
-$("#newsBtn").on("click",function()
+$("#quizBtn").on("click",function()
 {
     //API Key for news article
     apiKey = "a819d6578c28488eadd2b1297db47b15";
@@ -55,17 +56,9 @@ $("#newsBtn").on("click",function()
             newDiv.append(p2);
             newDiv.append(p3);
             newDiv.append(p4);
-            $(".newsarticle").append(newDiv);
-            
-
-
-
+            $(".latestInfo").append(newDiv);
         }
         
 
     })
 })
-
-
-
-</script>
