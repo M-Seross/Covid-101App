@@ -2,6 +2,7 @@
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 //<script type="text/javascript" src="./script.js">
 
+
 //API to grab statistics   
     var queryURL = "https://covidapi.info/api/v1/country/AUS/latest"            
     $.ajax({
@@ -9,6 +10,7 @@
         method: "GET"
     }).then(function(response) 
     {
+
         //Assigns the values from pull request and pushes to Statistics HTML
         var output = Object.values(response.result)[0];
         var confirmCases = output.confirmed;
@@ -28,11 +30,13 @@ $("#newsBtn").on("click",function()
     //API key to be added to API link
     var queryURL = "https://newsapi.org/v2/top-headlines?q=coronavirus&country=au&apiKey="+apiKey;
     //Pull request for API          
+
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) 
     {
+
         var array = response.articles;
         //Loop to iterate through all the artiles
         for (var i=0;i<array.length;i++)
@@ -60,15 +64,15 @@ $("#newsBtn").on("click",function()
             var anchor = $("<img>");
             anchor.attr("src",image);
             //Append all above to newly created div 
+
             newDiv.append(p1);
             newDiv.append(p2);
             newDiv.append(p3);
             newDiv.append(p4);
+
             newDiv.append(anchor);
             //Append this new div onto HTML
             $(".latestInfo").append(newDiv);
         }
-        
-
     })
 })
