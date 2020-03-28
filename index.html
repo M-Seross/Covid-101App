@@ -4,29 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-
-</head>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+    
+  </head>
 <body>
+    <!--Container for statistics showing confirmed cases/deaths/recovered-->
     <div class="container">
+        <!--Heading-->
         <div class="row">
-            <h4> COVID-19 Stats </h4>
+            <h4> COVID-101: Crash Course </h4>
+        </div>
+        <!--Grid set-up to display specified statistics-->
+        <div class="stats">
+            <div class="col-8">Confirmed cases</div>
+            <div id="infected" class="col-4"></div>
+            <div class="col-8">Recoveries</div>
+            <div id ="recovered" class="col-4"></div>
+            <div class="col-8">Death</div>
+            <div id="deceased" class="col-4"></div>
         </div>
 
-        <div class="row">
-            <div class="col-8">Number of infected</div>
-            <div id="infected-people" class="col-4">100</div>
-            <div class="col-8">Numbers of recovered</div>
-            <div id ="recovered-people" class="col-4">100</div>
-            <div class="col-8">Numbers of deceased</div>
-            <div id="deceased-people" class="col-4">100</div>
+        <div class="latestInfo">
+            <button  id="searchBtn" type="button" class="btn btn-primary btn-lg btn-block">Latest info</button>
+            <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block">Test yourself</button>
+            <div id="newsarticle"></div>
         </div>
-
-        <button  id="lateste-info" type="button" class="btn btn-primary btn-lg btn-block">View latest info</button>
-         <button id="how-much-know" type="button" class="btn btn-secondary btn-lg btn-block">See how much you know</button>
     </div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="./scipt.js"></script>
 
 </html>
