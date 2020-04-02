@@ -1,0 +1,41 @@
+body{
+    background-image: url(Images/mobile-bg-home.jpg);
+    background-color: #1a1a1c;
+    background-size: 100% auto;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+h4{
+    color: white;
+    font-size: 47px;
+    margin: 25px;
+    margin-top: 85px;
+}
+.stats{
+    background-color: white;
+    opacity: 0.7;
+    margin-top: 40px;
+    text-align: center;
+    padding: 20px;
+    font-size: 34px;
+    font-weight: bold;
+}
+.stat-info{
+    font-size: 28px;
+    margin-top: 12px;
+}
+.latestInfo{
+    margin-top: 10px;
+}
+.latestInfo button{
+    background-color: red;
+}
+#quizBtn{
+    border-bottom: 1px solid black;
+    margin-top: 0px;
+}
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    border: solid;
+    color: whitesmoke;
+}
