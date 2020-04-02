@@ -34,3 +34,8 @@ h4{
     border-bottom: 1px solid black;
     margin-top: 0px;
 }
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    border: solid;
+    color: whitesmoke;
+}

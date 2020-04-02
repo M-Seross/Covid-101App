@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -17,32 +17,49 @@
         <!--Heading-->
         <div class="row">
             <h4> COVID-101: Crash Course </h4>
-        </div>
-        <!--Grid set-up to display specified statistics-->
-        <div class="stats">
-            <div class="row">
-                <div id="infected" class="col-12">85000</div>
-                <div class="col-12">Confirmed cases</div> 
+            <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Select Country
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#" data-country="AUS" >Australia</a>
+                          <a class="dropdown-item" href="#" data-country="USA">USA</a>
+            
+                        </div>
+                      </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-6"> 
-                    <div id="recovered">139900</div>  
-                    <div class="stat-info">Recoveries</div>
-                </div>
-                <div class="col-6">
-                    <div id="deceased">6000</div>
-                    <div class="stat-info">Death</div>
-                </div>
-            </div>  
-        </div>
-        <div class="latestInfo">
-            <button id="searchBtn" type="button" class="btn btn-primary btn-lg btn-block">Latest info</button>
-            <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block">Test yourself</button>
         </div>
     </div>
+    <!--Grid set-up to display specified statistics-->
+    <div class="stats">
+        <div class="row">
+            <div id="infected" class="col-12">85000</div>
+            <div class="col-12">Confirmed cases</div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div id="recovered">139900</div>
+                <div class="stat-info">Recoveries</div>
+            </div>
+            <div class="col-6">
+                <div id="deceased">6000</div>
+                <div class="stat-info">Death</div>
+            </div>
+        </div>
+    </div>
+    <div class="latestInfo">
+        <button id="searchBtn" type="button" class="btn btn-primary btn-lg btn-block">Latest info</button>
+        <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block">Test yourself</button>
+    </div>
+    </div>
 </body>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
+integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script type="text/javascript" src="script.js"></script>
 
 </html>

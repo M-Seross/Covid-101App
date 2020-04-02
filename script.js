@@ -1,19 +1,17 @@
 //JAVASCRIPT CODE
 //<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 //<script type="text/javascript" src="./script.js">
-
+getStats("AUS");
 //Event Listener for button COVID-19
  //Event Listener
-$("#searchBtn").on("click",function()
-{
-    alert("test")
-    var queryURL = "https://covidapi.info/api/v1/country/AUS/latest"            
+
+function getStats(countryCode){
+    var queryURL = "https://covidapi.info/api/v1/country/"+countryCode+"/latest"           
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) 
     {
-    
         var output = Object.values(response.result)[0];
         var confirmCases = output.confirmed;
         var confirmDeaths = output.deaths;
@@ -22,6 +20,11 @@ $("#searchBtn").on("click",function()
         $("#deceased").text(confirmDeaths);
         $("#recovered").text(confirmRecovered);
     })
+}
+
+$(".dropdown-item").on("click",function(){
+    var countrySelect =  $(this).attr("data-country");
+    getStats(countrySelect);
 })
 
 $("#quizBtn").on("click",function()
