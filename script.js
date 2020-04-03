@@ -19,7 +19,7 @@ function getStats(countryCode,countryName){
         $("#infected").text(confirmCases);
         $("#deceased").text(confirmDeaths);
         $("#recovered").text(confirmRecovered);
-        $(".btn").text(countryName);
+        $(".countryBtn").text(countryName);
     })
 }
 
