@@ -1,17 +1,37 @@
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-image: url('Images/desktop-bg-home.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     margin-bottom: 40px;
 }
 
-h1, .lead, .card-title, .card-text {
+.page-heading {
+    background-color:  rgba(255, 255, 255, 0.6);
+    padding: 40px 40px 30px;
+
+}
+
+@media (max-width: 768px) {
+    .masthead {
+        background-image: url('Images/mobile-bg-home.jpg');
+    }
+
+}
+
+h1, .lead, .card-title, .card-text, .navbar-brand, .nav-link {
     font-family: 'Montserrat', sans-serif; 
 }
 
+h1 {
+    font-size: 28pt;
+}
+
+.lead {
+    font-size: 16pt;
+}
 .card-title {
     font-weight: 400;
     font-size: 14pt;
@@ -23,8 +43,13 @@ h1, .lead, .card-title, .card-text {
     font-size: 12pt;
 }
 
-.small {
+.small, .nav-link {
     font-size: 10pt;
+}
+
+#date {
+    font-weight: 400;
+    font-size: 14pt;
 }
 
 .card {

@@ -11,7 +11,6 @@ $.ajax({
 {
 
     var array = response.articles;
-    console.log(array)
     //Loop to iterate through the latest articles
     for (var i=0;i<15;i++)
     {   
@@ -70,3 +69,6 @@ $.ajax({
         $(".card-deck").append(cardDiv);
     }
 })
+
+//Moment.js date display in the selected span
+$("#date")[0].innerText = moment().format('D MMMM ')
