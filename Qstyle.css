@@ -34,7 +34,9 @@ body {
     text-align: center;
   }
   .selectAns {
-    padding: 20px 0px;;
+    padding: 20px 0px;
+    flex-grow: 1;
+    min-width: 200px;
   }
   
   /* Navbar element styling */
@@ -117,7 +119,8 @@ body {
   .btn-grid, .controls {
     margin: 10px 0px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    flex-wrap: wrap;
     justify-content: center;
   }
   .control {
