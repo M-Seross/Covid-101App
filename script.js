@@ -25,7 +25,7 @@ function getStats(countryCode){
 
 $(".dropdown-item").on("click",function(){
     var countrySelect =  $(this).attr("data-country");
-    getStats(countrySelect);
+    getStats(countrySelect);    
 })
 
 $("#quizBtn").on("click",function()
