@@ -21,13 +21,16 @@
             <div class="container h-100">
                 <div class="d-flex justify-content-center h-100">
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Select Country
+                        <button class="btn btn-secondary dropdown-toggle countryBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Australia
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#" data-country="AUS" >Australia</a>
-                          <a class="dropdown-item" href="#" data-country="USA">USA</a>
-            
+                          <a class="dropdown-item" href="#" data-country="AUS" value-country="Australia">Australia</a>
+                          <a class="dropdown-item" href="#" data-country="USA" value-country="USA">USA</a>
+                          <a class="dropdown-item" href="#" data-country="IND" value-country="India" >India</a>
+                          <a class="dropdown-item" href="#" data-country="ITA" value-country="Italy">Italy</a>
+                          <a class="dropdown-item" href="#" data-country="CHN" value-country="China">China</a>
+                          <a class="dropdown-item" href="#" data-country="JPN" value-country="Japan">Japan</a>
                         </div>
                       </div>
                 </div>
@@ -53,7 +56,7 @@
         </div>
         <div class="latestInfo">
             <button  id="newsBtn" type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = 'articles.html';">View latest info</button>
-            <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href = '#';">See how much you know</button>
+            <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href = 'Qbody.html';">See how much you know</button>
         </div>
     </div>
 </body>
@@ -61,5 +64,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" 
 integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="home-script.js"></script>
 </html>

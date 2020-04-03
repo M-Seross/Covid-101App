@@ -9,7 +9,7 @@ function startGame()
     $("#Qcontainer").removeClass("hide");
     
 }
-
+//Function to show initial set of questions (this is different to the function which shows the remaining sets of questions)
 function showQuestion()
 {
     //counter for tracking number of questions
@@ -33,12 +33,21 @@ function showQuestion()
         {   
             if($(this).attr("correct")=="true")
             {
-                //alert("correct!")
+                 //Modal to show that answer selected is correct
                 $("#correctModal").modal('show');
+                //Jquery for Next Question Button
+                $("#nextQ").on("click",function()
+                {   
+                    //Empty the question container
+                    $("#answerBtn").empty();
+                    //Go to next question when click next
+                    showNextQuestion();
+                    $("#correctModal").modal('hide');
+                })
             }
             else
             {
-                
+                //Show wrong modal
                 $("#wrongModal").modal('show');
             }
         
@@ -54,32 +63,44 @@ function showNextQuestion()
     i++;
     questionInfo = questions[i];
     
-    if (questionInfo.question != null)
+    if (questionInfo != null)
     {
         //Display Question
         $("#question").text(questionInfo.question);
-        
+        //Iterates through the array that holds the questions and displays to question container
         for (var j=0;j<questionInfo.answers.length;j++)
         {   
             //create new button to append solutions to
             newBtn = $("<button>");  
             newBtn.text(questionInfo.answers[j].text);
+            //Add attritute to new button that defines whether the solution is correct/incorrect
+            newBtn.attr("correct",questionInfo.answers[j].correct);
             newBtn.addClass("btn-dark selectAns");
             $("#answerBtn").append(newBtn);
-            console.log("test")
-            //Event Listener for correct answer
+            //Turn off all clicks - reset state
             $(".selectAns").off("click");
+            //Event Listener for correct answer
             $(".selectAns").on("click",function()
             {   
                 //Determine if results is true/false
                 if($(this).attr("correct")=="true")
                 {
-                    //alert("correct!")
+                    //Show pop-up stating correct answer
                     $("#correctModal").modal('show');
+                    //Jquery for Next Question Button
+                    $("#nextQ").on("click",function()
+                    {   
+                        //Empty the question container
+                        $("#answerBtn").empty();
+                        //Go to next question when click next
+                        showNextQuestion();
+                        $("#correctModal").modal('hide');
+                    })
+            
                 }
                 else
                 {
-                    
+                    //Try again shows up allowing user to find correct answer
                     $("#wrongModal").modal('show');
                 }
             })
@@ -92,6 +113,14 @@ function showNextQuestion()
 
 
 }
+
+$("#nextBtn").on("click",function()
+{
+    $("#answerBtn").empty();
+    
+    showNextQuestion();    
+    
+})
 
 function showEnd()
 {
@@ -109,15 +138,7 @@ $("#startBtn").on("click", function()
     
 })
 
-$("#nextBtn").on("click",function()
-{
-    $("#answerBtn").empty();
-    
-    showNextQuestion();
-     
-    
-    
-})
+
 
 
 
@@ -145,10 +166,10 @@ var questions = [
     {
         question: 'What is an acceptable social distancing length?',
         answers:[
-            { text: 'at arms legnth', correct: false},
-            { text: 'shoulder to shoulder', correct: false},
-            { text: '2m apart', correct: false},
-            { text: '1.5m apart', correct: true}
+            { text: 'At arms legnth', correct: false},
+            { text: 'sSoulder to shoulder', correct: false},
+            { text: '2 meters apart', correct: false},
+            { text: '1.5 meters apart', correct: true}
         ]
 
     },
@@ -181,8 +202,8 @@ var questions = [
    {
         question: 'If you have come back from overseas, how long should you be isolated for?',
         answers:[
-            { text: '14 hours', correct: false},
             { text: '14 mins', correct: false},
+            { text: '14 hours', correct: false},
             { text: '14 days', correct: true},
             { text: 'Not required if you\'re rich and live in the Eastern Suburbs', correct: false}
         ]
