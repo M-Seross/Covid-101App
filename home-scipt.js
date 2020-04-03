@@ -28,3 +28,42 @@ $(".dropdown-item").on("click",function(){
     var countryName = $(this).attr('value-country')
     getStats(countrySelect,countryName);
 })
+
+$("#quizBtn").on("click",function()
+{
+    //API Key for news article
+    apiKey = "a819d6578c28488eadd2b1297db47b15";
+
+    var queryURL = "https://newsapi.org/v2/top-headlines?q=coronavirus&country=au&apiKey="+apiKey;
+    console.log(queryURL)            
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) 
+    {
+        var array = response.articles
+        console.log(array)
+
+
+        for (var i=0;i<array.length;i++)
+        {   
+            currentResult = array[i];
+            newDiv = $("<div>");
+            title = currentResult.title;
+            author = currentResult.author;
+            publishDate = currentResult.publishedAt;
+            link = currentResult.url;
+            var p1 = $("<p>").text(title);
+            var p2 = $("<p>").text(author);
+            var p3 = $("<p>").text(publishDate);
+            var p4 = $("<p>").text(link);
+            newDiv.append(p1);
+            newDiv.append(p2);
+            newDiv.append(p3);
+            newDiv.append(p4);
+            $(".latestInfo").append(newDiv);
+        }
+        
+
+    })
+})
