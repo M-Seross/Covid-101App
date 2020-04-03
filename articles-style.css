@@ -1,7 +1,56 @@
-h1, h2, h3, h4, h5, h6 {
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('https://source.unsplash.com/BtbjCFUvBXs/1920x1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+}
+
+h1, .lead, .card-title, .card-text {
     font-family: 'Montserrat', sans-serif; 
+}
+
+.card-title {
+    font-weight: 400;
+    font-size: 14pt;
+    margin-bottom: 30px;
+}
+
+.card-text {
+    font-weight: 300;
+    font-size: 12pt;
+}
+
+.small {
+    font-size: 10pt;
 }
 
 .card {
     min-width: 288px;
+    margin-bottom: 20px !important;
+    box-shadow: 0px 0px 10px #888888;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 20px #707070;
+    color: white;
+    background-color: rgb(255, 71, 58);
+}
+
+.card-img-top {
+    min-height: 200px;
+    background-color: rgb(158, 158, 158);
+    border: none;
+    border-top-left-radius: calc(.35rem - 1px);
+    border-top-right-radius: calc(.35rem - 1px);
+}
+
+.card-bottom {
+    position: absolute;
+    bottom: 10px;
 }

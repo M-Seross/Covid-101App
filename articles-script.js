@@ -11,8 +11,9 @@ $.ajax({
 {
 
     var array = response.articles;
-    //Loop to iterate through all the articles
-    for (var i=0;i<array.length;i++)
+    console.log(array)
+    //Loop to iterate through the latest articles
+    for (var i=0;i<15;i++)
     {   
         currentResult = array[i];
         //Assign the response results into title, author, publish date, link, image
@@ -22,26 +23,32 @@ $.ajax({
         link = currentResult.url;
         image = currentResult.urlToImage;
         //When no author is specified, displays not specified
-        if (!author)
-        {
+        if (!author){
             author = "No Author Specified";
+        } else if (author.length > 20){
+            author = jQuery.trim(author).substring(0, 15)
+            .trim(this) + "...";
         }
 
+        //When no image is listed, display a placeholder
+        if (image == null){
+            image = "https://via.placeholder.com/300x150/FFFFFF?text=No+Image+Provided"
+        }
         //Create HTML DOM elements for each assigned response result
-        var titleDisplay = $("<h5>").text(title).attr("class", "card-title");
-        var authorDisplay = $("<p>").text("Authored by: " + author).attr("class", "card-text");
+        var titleDisplay = $("<p>").text(title).attr("class", "card-title");
+        var authorDisplay = $("<p>").text("Authored by: " + author).attr("class", "card-bottom card-text");
         var dateDisplay = $("<p>").text("Date published: " + publishDate.split("T")[0]).attr("class", "card-text small");;
-        var imgDisplay = $("<div>").attr({
+        var imgDisplay = $("<img>").attr({
             src: image,
             class: "card-img-top"
         });
 
         //Create a parent card element for the article
         var cardDiv = $("<div>").attr({
-            class: "card",
+            class: "card animated bouncein",
             href: link,
         });
-
+        //Click event for card
         cardDiv.on("click", function(){
             window.open($(this).attr("href"), '_blank');
         })
@@ -54,8 +61,8 @@ $.ajax({
         cardDiv.append(imgDisplay);
 
         //2. Append all text items to the card-body and append the card-body to the card
-        cardBody.append(titleDisplay);
         cardBody.append(dateDisplay);
+        cardBody.append(titleDisplay);
         cardBody.append(authorDisplay);
         cardDiv.append(cardBody)
 
