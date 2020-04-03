@@ -114,6 +114,14 @@ function showNextQuestion()
 
 }
 
+$("#nextBtn").on("click",function()
+{
+    $("#answerBtn").empty();
+    
+    showNextQuestion();    
+    
+})
+
 function showEnd()
 {
     $("#Qcontainer").addClass("hide");
@@ -130,15 +138,7 @@ $("#startBtn").on("click", function()
     
 })
 
-$("#nextBtn").on("click",function()
-{
-    $("#answerBtn").empty();
-    
-    showNextQuestion();
-     
-    
-    
-})
+
 
 
 
@@ -166,10 +166,10 @@ var questions = [
     {
         question: 'What is an acceptable social distancing length?',
         answers:[
-            { text: 'at arms legnth', correct: false},
-            { text: 'shoulder to shoulder', correct: false},
-            { text: '2m apart', correct: false},
-            { text: '1.5m apart', correct: true}
+            { text: 'At arms legnth', correct: false},
+            { text: 'sSoulder to shoulder', correct: false},
+            { text: '2 meters apart', correct: false},
+            { text: '1.5 meters apart', correct: true}
         ]
 
     },
@@ -202,8 +202,8 @@ var questions = [
    {
         question: 'If you have come back from overseas, how long should you be isolated for?',
         answers:[
-            { text: '14 hours', correct: false},
             { text: '14 mins', correct: false},
+            { text: '14 hours', correct: false},
             { text: '14 days', correct: true},
             { text: 'Not required if you\'re rich and live in the Eastern Suburbs', correct: false}
         ]

@@ -15,6 +15,28 @@
 </head>
 
 <body>
+  <!--Nav Bar-->
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">COVID:101</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Return home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="articles.html">View latest info</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
 
   <!-- Page Content -->
   <div class="container">
@@ -37,17 +59,7 @@
           </div>
       </main>
     </div>
-    <div id="feedback-row" class="row feedback-row">
-      <div id="correct-feedback" class="col-lg-8 content-box correct feedback hide">
-        <h1>Correct!</h1>
-        <p>You have gained one point!</p>
-      </div>
-      <div id="incorrect-feedback" class="col-lg-8 content-box incorrect feedback hide">
-        <h1>Not quite.</h1>
-        <p>You have lost 5 seconds from the clock.</p>
-      </div>
-    </div>
-
+  
     </div>
   </div>
 
@@ -63,7 +75,8 @@
           </button>
         </div>
         <div class="modal-body">
-          <p class= "modalText">You know the way</p>
+          <p class= "modalText">Correct!</p>
+          <button type="button" class="btn btn-primary btn-dark" id="nextQ">Next</button>
         </div>
       </div>
     </div>
@@ -80,6 +93,7 @@
         </div>
         <div class="modal-body">
           <p class="modalText">Try Again!</p>
+          <button type="button" class="btn btn-primary btn-dark" data-dismiss="modal" value="Close">Try Again</button>
         </div>
       </div>
     </div>
