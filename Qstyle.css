@@ -8,7 +8,7 @@ body {
     -o-background-size: cover;
   }
   .row {
-    margin-bottom: 100px;
+    margin-top: 100px;
   }
   
   /* Font styles */
@@ -30,6 +30,10 @@ body {
     margin-bottom: 20px;
     margin-top: 0px;
   }
+  .nav-link {
+    font-size: 10pt;
+    font-weight: 400;
+}
   .modalText {
     color: black;
   }

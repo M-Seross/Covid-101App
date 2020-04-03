@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>COVID-101: Home</title>
   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- Animate.css and Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Custom styles for this page -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -17,46 +21,54 @@
     <div class="container">
         <!--Heading-->
         <div class="row">
-            <h4> COVID-101: Crash Course </h4>
-            <div class="container h-100">
-                <div class="d-flex justify-content-center h-100">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle countryBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Australia
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <a class="dropdown-item" href="#" data-country="AUS" value-country="Australia">Australia</a>
-                          <a class="dropdown-item" href="#" data-country="USA" value-country="USA">USA</a>
-                          <a class="dropdown-item" href="#" data-country="IND" value-country="India" >India</a>
-                          <a class="dropdown-item" href="#" data-country="ITA" value-country="Italy">Italy</a>
-                          <a class="dropdown-item" href="#" data-country="CHN" value-country="China">China</a>
-                          <a class="dropdown-item" href="#" data-country="JPN" value-country="Japan">Japan</a>
-                        </div>
-                      </div>
-                </div>
+            <div class="col-lg-4">
+                <h1>COVID-101:<br>Crash Course</h1>
             </div>
-
         </div>
     </div>
     <!--Grid set-up to display specified statistics-->
-    <div class="stats">
-        <div class="row">
-            <div id="infected" class="col-12">85000</div>
-            <div class="col-12">Confirmed cases</div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                <div id="recovered">139900</div>
-                <div class="stat-info">Recoveries</div>
-            </div>
-            <div class="col-6">
-                <div id="deceased">6000</div>
-                <div class="stat-info">Death</div>
-            </div>
-        </div>
-        <div class="latestInfo">
-            <button  id="newsBtn" type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href = 'articles.html';">View latest info</button>
-            <button id="quizBtn" type="button" class="btn btn-secondary btn-lg btn-block" onclick="window.location.href = 'Qbody.html';">See how much you know</button>
+    <div class="container">
+        <div class="col-lg-4">
+            <section class="stats-row row">
+                <div class="col-sm-12">
+                    <h2 id="infected">85000</h2>
+                    <p class="stat-info-primary">Infections</p>
+                </div>
+                <div class="col">
+                    <h3 id="recovered">139900</h3>
+                    <p class="stat-info">Recovered</p>
+                </div>
+                <div class="col">
+                    <h3 id="deceased">6000</h3>
+                    <p class="stat-info">Deceased</p>
+                </div>
+                <div class="row dropdown-row">
+
+                        <p class="dropdown-label">Select country:</p>
+
+
+                        <div class="dropdown dropup">
+                            <button class="btn btn-secondary dropdown-toggle dropdown-toggle-split countryBtn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Australia
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="#" data-country="AUS" value-country="Australia">Australia (set as default)</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#" data-country="USA" value-country="USA">USA</a>
+                              <a class="dropdown-item" href="#" data-country="IND" value-country="India" >India</a>
+                              <a class="dropdown-item" href="#" data-country="ITA" value-country="Italy">Italy</a>
+                              <a class="dropdown-item" href="#" data-country="CHN" value-country="China">China</a>
+                              <a class="dropdown-item" href="#" data-country="JPN" value-country="Japan">Japan</a>
+                            </div>
+                        </div>
+
+                </div>
+            </section>
+
+            <section class="latestInfo">
+                <button  id="newsBtn" type="button" class="btn btn-lg col-sm-12" onclick="window.location.href = 'articles.html';">View latest info</button>
+                <button id="quizBtn" type="button" class="btn btn-lg col-sm-12" onclick="window.location.href = 'Qbody.html';">See how much you know</button>
+            </section>
         </div>
     </div>
 </body>
