@@ -5,13 +5,13 @@ getStats("AUS");
 //Event Listener for button COVID-19
  //Event Listener
 
-function getStats(countryCode){
+function getStats(countryCode,countryName){
     var queryURL = "https://covidapi.info/api/v1/country/"+countryCode+"/latest"           
     $.ajax({
         url: queryURL,
         method: "GET"
     }).then(function(response) 
-    {
+    {   
         var output = Object.values(response.result)[0];
         var confirmCases = output.confirmed;
         var confirmDeaths = output.deaths;
@@ -19,13 +19,14 @@ function getStats(countryCode){
         $("#infected").text(confirmCases);
         $("#deceased").text(confirmDeaths);
         $("#recovered").text(confirmRecovered);
-        console.log(this);
+        $(".btn").text(countryName);
     })
 }
 
 $(".dropdown-item").on("click",function(){
     var countrySelect =  $(this).attr("data-country");
-    getStats(countrySelect);
+    var countryName = $(this).attr('value-country')
+    getStats(countrySelect,countryName);
 })
 
 $("#quizBtn").on("click",function()
