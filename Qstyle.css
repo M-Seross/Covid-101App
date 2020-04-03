@@ -30,6 +30,10 @@ body {
     margin-bottom: 20px;
     margin-top: 0px;
   }
+  .modalText {
+    color: black;
+  }
+  
   #quizTitle {
     text-align: center;
   }
