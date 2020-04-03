@@ -167,7 +167,7 @@ var questions = [
         question: 'What is an acceptable social distancing length?',
         answers:[
             { text: 'At arms length', correct: false},
-            { text: 'Soulder to shoulder', correct: false},
+            { text: 'Shoulder to shoulder', correct: false},
             { text: '2 meters apart', correct: false},
             { text: '1.5 meters apart', correct: true}
         ]
