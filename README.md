@@ -1,6 +1,6 @@
 # Project documentation
 
-**Project titleCovid-101:** Virus basics
+**Project titleCovid-101:** Crash Course
 
 **Project description:** A web app which pulls all of the latest information from various media outlets and lets users read it. They can sort by date to get specific stats if they want.
   -Optional extra: add a little “how much do you know?” game (multiple choice quiz with points)
